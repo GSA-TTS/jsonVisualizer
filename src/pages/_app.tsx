@@ -12,6 +12,7 @@ import GlobalStyle from "../constants/globalStyle";
 import { SEO } from "../constants/seo";
 import { lightTheme } from "../constants/theme";
 import { smartColorSchemeManager } from "../lib/utils/mantineColorScheme";
+import Head from "next/head";
 
 const theme = createTheme({
   autoContrast: true,
@@ -64,6 +65,10 @@ function JsonCrack({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Head>
+        <title>NEPA Data Standard</title>
+        <meta name="description" content="NEPA Data Standard Visualizer" />
+      </Head>
       <NextSeo {...SEO} />
       <SoftwareAppJsonLd
         name="JSON Crack"
