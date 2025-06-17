@@ -2,13 +2,13 @@ import debounce from "lodash.debounce";
 import { event as gaEvent } from "nextjs-google-analytics";
 import { toast } from "react-hot-toast";
 import { create } from "zustand";
+import nepaSchema from "../data/nepa.schema.json";
 import { FileFormat } from "../enums/file.enum";
 import useGraph from "../features/editor/views/GraphView/stores/useGraph";
 import { isIframe } from "../lib/utils/helpers";
 import { contentToJson, jsonToContent } from "../lib/utils/jsonAdapter";
 import useConfig from "./useConfig";
 import useJson from "./useJson";
-import nepaSchema from "../data/nepa.schema.json";
 
 const defaultJson = JSON.stringify(nepaSchema, null, 2);
 

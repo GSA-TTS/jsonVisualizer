@@ -1,5 +1,6 @@
 import React from "react";
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { createTheme, MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
@@ -12,7 +13,6 @@ import GlobalStyle from "../constants/globalStyle";
 import { SEO } from "../constants/seo";
 import { lightTheme } from "../constants/theme";
 import { smartColorSchemeManager } from "../lib/utils/mantineColorScheme";
-import Head from "next/head";
 
 const theme = createTheme({
   autoContrast: true,

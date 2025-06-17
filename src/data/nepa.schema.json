@@ -37,11 +37,7 @@
           "anyOf": [
             {
               "type": "string",
-              "enum": [
-                "energy",
-                "transportation",
-                "land management"
-              ],
+              "enum": ["energy", "transportation", "land management"],
               "description": "High-level project category (e.g., energy, transportation, land management)"
             },
             {
@@ -63,9 +59,7 @@
               "description": "Contact information for the project sponsor"
             }
           },
-          "required": [
-            "name"
-          ]
+          "required": ["name"]
         },
         "lead_agency": {
           "type": "string",
@@ -91,9 +85,7 @@
               "description": "Reference to associated GIS data"
             }
           },
-          "required": [
-            "description"
-          ]
+          "required": ["description"]
         },
         "project_type": {
           "type": "string",
@@ -114,12 +106,7 @@
         },
         "current_status": {
           "type": "string",
-          "enum": [
-            "pre-application",
-            "underway",
-            "paused",
-            "completed"
-          ],
+          "enum": ["pre-application", "underway", "paused", "completed"],
           "description": "Current phase of the NEPA, permitting, or other authorization process (aggregated from process status)"
         },
         "location_lat": {
@@ -140,13 +127,7 @@
     "process": {
       "type": "object",
       "description": "The specific type of environmental review, permit, or authorization. cA process is associated with or nested beneath a project and will have documents associated and nested beneath it.",
-      "required": [
-        "process_id",
-        "project_id",
-        "process_type",
-        "process_status",
-        "lead_agency"
-      ],
+      "required": ["process_id", "project_id", "process_type", "process_status", "lead_agency"],
       "properties": {
         "id": {
           "type": "integer",
@@ -174,23 +155,14 @@
         },
         "process_type": {
           "type": "string",
-          "enum": [
-            "CE",
-            "EA",
-            "EIS"
-          ],
+          "enum": ["CE", "EA", "EIS"],
           "description": "Level of NEPA review or other permit or authorization (see Permitting Council Federal Environmental Review and Authorization Inventory)"
         },
         "process_status": {
           "anyOf": [
             {
               "type": "string",
-              "enum": [
-                "planned",
-                "underway",
-                "paused",
-                "completed"
-              ],
+              "enum": ["planned", "underway", "paused", "completed"],
               "description": "Indicates status of process"
             },
             {
@@ -262,10 +234,7 @@
           "description": "Detailed description of the process"
         },
         "process_model_id": {
-          "anyOf": [
-            { "type": "string" },
-            { "type": "null" }
-          ],
+          "anyOf": [{ "type": "string" }, { "type": "null" }],
           "description": "Reference to the process model used for this process instance"
         }
       },
@@ -274,13 +243,7 @@
     "document": {
       "type": "object",
       "description": "Official records created during the NEPA review. The document object includes both metadata identifying the document and its context and a container for summary information that lays out, at a minimum, the table of contents of the document. Documents are also likely to have many GIS objects associated with them.",
-      "required": [
-        "document_id",
-        "process_id",
-        "document_type",
-        "title",
-        "prepared_by"
-      ],
+      "required": ["document_id", "process_id", "document_type", "title", "prepared_by"],
       "properties": {
         "id": {
           "type": "integer",
@@ -296,12 +259,7 @@
         },
         "document_type": {
           "type": "string",
-          "enum": [
-            "NOI",
-            "Draft EIS",
-            "Final EIS",
-            "ROD"
-          ],
+          "enum": ["NOI", "Draft EIS", "Final EIS", "ROD"],
           "description": "Type of document (e.g., NOI, Draft EIS, Final EIS, ROD)"
         },
         "title": {
@@ -410,12 +368,7 @@
         },
         "method_of_submission": {
           "type": "string",
-          "enum": [
-            "online",
-            "email",
-            "mail",
-            "in-person"
-          ],
+          "enum": ["online", "email", "mail", "in-person"],
           "description": "Method used to submit the comment"
         },
         "agency_response": {
@@ -444,12 +397,7 @@
     "public_engagement_event": {
       "type": "object",
       "description": "Opportunities for interaction in the NEPA process, including formal consultation",
-      "required": [
-        "event_id",
-        "type",
-        "date",
-        "related_process_id"
-      ],
+      "required": ["event_id", "type", "date", "related_process_id"],
       "properties": {
         "id": {
           "type": "integer",
@@ -461,11 +409,7 @@
         },
         "type": {
           "type": "string",
-          "enum": [
-            "public meeting",
-            "notice",
-            "solicitation"
-          ],
+          "enum": ["public meeting", "notice", "solicitation"],
           "description": "Type of public engagement event"
         },
         "date": {
@@ -479,11 +423,7 @@
           "properties": {
             "type": {
               "type": "string",
-              "enum": [
-                "physical",
-                "virtual",
-                "hybrid"
-              ],
+              "enum": ["physical", "virtual", "hybrid"],
               "description": "Type of event location"
             },
             "details": {
@@ -531,13 +471,7 @@
     "case_event": {
       "type": "object",
       "description": "Milestones or steps within the NEPA review, tracked in a case management system or other system, such as task management tools or reporting dashboards",
-      "required": [
-        "case_event_id",
-        "process_id",
-        "event_name",
-        "event_date",
-        "event_type"
-      ],
+      "required": ["case_event_id", "process_id", "event_name", "event_date", "event_type"],
       "properties": {
         "id": {
           "type": "integer",
@@ -582,11 +516,7 @@
         },
         "status": {
           "type": "string",
-          "enum": [
-            "pending",
-            "completed",
-            "in progress"
-          ],
+          "enum": ["pending", "completed", "in progress"],
           "description": "Current status of the event"
         },
         "outcome": {
@@ -627,9 +557,7 @@
     "gis_data": {
       "type": "object",
       "description": "Geospatial data and metadata associated with NEPA projects",
-      "required": [
-        "gis_id"
-      ],
+      "required": ["gis_id"],
       "properties": {
         "id": {
           "type": "integer",
@@ -670,20 +598,12 @@
           "properties": {
             "format": {
               "type": "string",
-              "enum": [
-                "GeoJSON",
-                "Shapefile",
-                "KML"
-              ],
+              "enum": ["GeoJSON", "Shapefile", "KML"],
               "description": "Format of the GIS data"
             },
             "access_method": {
               "type": "string",
-              "enum": [
-                "URL",
-                "API",
-                "direct upload"
-              ],
+              "enum": ["URL", "API", "direct upload"],
               "description": "Method to access the GIS data"
             },
             "coordinate_system": {
@@ -714,11 +634,7 @@
             },
             "purpose": {
               "type": "string",
-              "enum": [
-                "bespoke",
-                "analysis",
-                "base map"
-              ],
+              "enum": ["bespoke", "analysis", "base map"],
               "description": "Purpose of the GIS data (project-specific, analysis, or foundational layers)"
             }
           }
@@ -774,11 +690,7 @@
     "gis_data_element": {
       "type": "object",
       "description": "Individual elements within GIS data containers with specific access and format information",
-      "required": [
-        "gis_element_id",
-        "gis_id",
-        "data_type"
-      ],
+      "required": ["gis_element_id", "gis_id", "data_type"],
       "properties": {
         "id": {
           "type": "integer",
@@ -794,11 +706,7 @@
         },
         "data_type": {
           "type": "string",
-          "enum": [
-            "GeoJSON",
-            "Shapefile",
-            "KML"
-          ],
+          "enum": ["GeoJSON", "Shapefile", "KML"],
           "description": "Format of the GIS data element"
         },
         "container_reference": {
@@ -807,11 +715,7 @@
         },
         "access_method": {
           "type": "string",
-          "enum": [
-            "URL",
-            "API",
-            "direct upload"
-          ],
+          "enum": ["URL", "API", "direct upload"],
           "description": "Method to access the GIS data element"
         },
         "coordinate_system": {
@@ -836,11 +740,7 @@
         },
         "purpose": {
           "type": "string",
-          "enum": [
-            "bespoke",
-            "analysis",
-            "base map"
-          ],
+          "enum": ["bespoke", "analysis", "base map"],
           "description": "Purpose of the GIS data element (project-specific, analysis, or foundational layers)"
         },
         "data_match": {
@@ -857,10 +757,7 @@
     "user_role": {
       "type": "object",
       "description": "Defines stakeholders interacting with the NEPA IT system",
-      "required": [
-        "role_id",
-        "name"
-      ],
+      "required": ["role_id", "name"],
       "properties": {
         "id": {
           "type": "integer",
@@ -895,11 +792,7 @@
     "legal_structure": {
       "type": "object",
       "description": "Legal, policy, or process data guiding the NEPA process, including thresholds and conditions for level of reviews or other decision criteria",
-      "required": [
-        "legal_structure_id",
-        "title",
-        "citation"
-      ],
+      "required": ["legal_structure_id", "title", "citation"],
       "properties": {
         "id": {
           "type": "integer",
@@ -1025,11 +918,7 @@
     "process_model": {
       "type": "object",
       "description": "Template or framework for NEPA processes",
-      "required": [
-        "process_model_id",
-        "name",
-        "description"
-      ],
+      "required": ["process_model_id", "name", "description"],
       "properties": {
         "id": {
           "type": "integer",
@@ -1068,10 +957,7 @@
           "description": "Decision Model and Notation (DMN) definition"
         },
         "parent_model": {
-          "anyOf": [
-            { "type": "string" },
-            { "type": "null" }
-          ],
+          "anyOf": [{ "type": "string" }, { "type": "null" }],
           "description": "Reference to parent process model, if this is a subprocess or flows from a previous process"
         }
       },
@@ -1080,10 +966,7 @@
     "decision_payload": {
       "type": "object",
       "description": "Data package containing decision-making information",
-      "required": [
-        "decision_payload_id",
-        "process_id"
-      ],
+      "required": ["decision_payload_id", "process_id"],
       "properties": {
         "id": {
           "type": "integer",
@@ -1138,24 +1021,15 @@
           "description": "Annotations on the evaluation data"
         },
         "decision_element_id": {
-          "anyOf": [
-            { "type": "string" },
-            { "type": "null" }
-          ],
+          "anyOf": [{ "type": "string" }, { "type": "null" }],
           "description": "Reference to the decision element this payload responds to"
         },
         "project_id": {
-          "anyOf": [
-            { "type": "string" },
-            { "type": "null" }
-          ],
+          "anyOf": [{ "type": "string" }, { "type": "null" }],
           "description": "Reference to the project this decision payload is associated with"
         },
         "parent_payload": {
-          "anyOf": [
-            { "type": "string" },
-            { "type": "null" }
-          ],
+          "anyOf": [{ "type": "string" }, { "type": "null" }],
           "description": "Reference to parent payload ID (e.g., if this is a response to a submission)"
         }
       },
@@ -1256,25 +1130,13 @@
       }
     }
   },
-  "required": [
-    "projects"
-  ],
+  "required": ["projects"],
   "dependencies": {
-    "processes": [
-      "projects"
-    ],
-    "documents": [
-      "processes"
-    ],
-    "public_comments": [
-      "documents"
-    ],
-    "public_engagement_events": [
-      "processes"
-    ],
-    "case_events": [
-      "processes"
-    ]
+    "processes": ["projects"],
+    "documents": ["processes"],
+    "public_comments": ["documents"],
+    "public_engagement_events": ["processes"],
+    "case_events": ["processes"]
   },
   "additionalProperties": true
 }
