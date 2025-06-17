@@ -19,7 +19,7 @@
     "lint": "tsc --project tsconfig.json && eslint src && prettier --check src",
     "lint:fix": "eslint --fix src & prettier --write src",
     "analyze": "ANALYZE=true npm run build",
-    "federalist": "npm run build && npm run dev"
+    "federalist": "npm install && npm run dev"
   },
   "dependencies": {
     "@mantine/code-highlight": "^7.17.8",
