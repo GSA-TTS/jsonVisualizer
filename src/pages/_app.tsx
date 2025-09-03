@@ -1,5 +1,6 @@
 import React from "react";
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { createTheme, MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
@@ -64,6 +65,10 @@ function JsonCrack({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Head>
+        <title>NEPA Data Standard</title>
+        <meta name="description" content="NEPA Data Standard Visualizer" />
+      </Head>
       <NextSeo {...SEO} />
       <SoftwareAppJsonLd
         name="JSON Crack"

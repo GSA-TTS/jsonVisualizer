@@ -83,9 +83,9 @@ const EditorPage = () => {
     <>
       <NextSeo
         {...SEO}
-        title="Editor | JSON Crack"
-        description="JSON Crack Editor is a tool for visualizing into graphs, analyzing, editing, formatting, querying, transforming and validating JSON, CSV, YAML, XML, and more."
-        canonical="https://jsoncrack.com/editor"
+        title="NEPA Data Standard Editor"
+        description="NEPA Data Standard Editor is a tool for visualizing into graphs, analyzing, editing, formatting, querying, transforming and validating JSON, CSV, YAML, XML, and more."
+        canonical="https://permitting.innovation.gov/editor"
       />
       <ThemeProvider theme={darkmodeEnabled ? darkTheme : lightTheme}>
         <QueryClientProvider client={queryClient}>
